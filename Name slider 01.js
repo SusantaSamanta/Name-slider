@@ -9,14 +9,18 @@ let time = 600, index = 0;
 const loop = (string) => {
   index++;
   let text = string.slice(0,index);
-  let t_length = text.length;
+  let t_length = text.length
+  if(t_length == length){
+    index = -1;
+  }
+  nameContainer.textContent = text;
   console.log(text);
   setTimeout(loop, 150, string)
 }
 
 setTimeout(() => {
   loop(string);
-  },2000);
+  },1000);
   
 //string = "Hello World"
 //console.log('length '+length)
@@ -28,4 +32,3 @@ let su=s.slice(0,7)
 //console.log(su)
 
 
-  
