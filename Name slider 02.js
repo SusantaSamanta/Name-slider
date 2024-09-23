@@ -1,6 +1,6 @@
 const nameContainer = document.getElementById("name_container")
 
-let length, string = 'SUSANTA SAMANTA';
+let length, string = 'SUSANTA SAMANTA ';
 length = string.length;
 let time = 600, index = 0;
   
@@ -9,21 +9,31 @@ let time = 600, index = 0;
 const loop = (string) => {
   index++;
   let text = string.slice(0,index);
-  let t_length = text.length
+  let t_length = text.length;
   if(t_length == length){
-    index = -1;
+    index =-1;
   }
   
-  let  fist_lett = text.slice(0,index-1);
+ // if(index > 0){
+  
+  let last_line = `<span class="${"last_line"}">${"|"}</span>`;
+  let fist_lett = text.slice(0,index-1);
   console.log(fist_lett)
-  let last_lett = text.slice(index-1,index);
+  let last_lett = text.slice(index-1,index)+last_line;
   console.log(last_lett)
   let final_text = `${fist_lett}<span class="${"big_text"}">${last_lett}</span>`;
+
+  nameContainer.style.opacity = "1";
+  //nameContainer.setPropertiesValue
+  //nameContainer.classList.add('opacity');
+ // .style="opacity:1";
+  
+  
   
   nameContainer.innerHTML = final_text;
   //console.log(final_text);
-  setTimeout(loop, 1000, string)
-  
+  //}
+  setTimeout(loop, 500, string)
 }
 
 setTimeout(() => {
