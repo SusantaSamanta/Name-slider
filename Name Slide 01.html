@@ -27,30 +27,43 @@
       text-align: center;
       border: 0px solid red;
       opacity: 1;
-      transition: opacity .2s ease; /* 2s fade-in effect */
+      
     }
     
-    .opacity{
-      opacity: 1;
-    }
-    .big_text{
+    #big_text{
       color: #000000;
       font-size: 11vw;
       font-weight: 500;
       position: relative;
       top: 3px;
+     /* opacity: 0;
+      */
     }
+    .fade-in {
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+    
+    
+    .show-text{
+      opacity: 1;
+      color: red;
+    }
+    
+    
     .last_line{
       font-weight: 300;
       font-size: 14vw;
       position: relative;
-      top: 1px;
+      top: 2px;
       color: #32323278;
     }
  </style>
 <body>
   
-  <div id="name_container"></div>
+  <div id="name_container">
+    <span class="last_line">|</span>
+  </div>
   
   <script src="Name Slide 01.js"> </script>
 
