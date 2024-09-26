@@ -10,11 +10,8 @@ const loop = (string) => {
   index++;
   let text = string.slice(0,index);
   let t_length = text.length;
-  if(t_length == length){
+  if(t_length == length)
     index =-1;
-  }
-  
- // if(index > 0){
   
   let last_line = `<span class="${"last_line"}">${"|"}</span>`;
   let fist_lett = text.slice(0,index-1);
@@ -23,24 +20,26 @@ const loop = (string) => {
   
   let last_lett = 0;
   if(t_length <= length){
-    if(text[length-2] == '*' ){
-      console.log(t_length)
-      console.log("ok " + text)
-      
-      last_lett = last_line;
-    }
-    else{
-      
-      last_lett = text.slice(index-1,index)+last_line;
-    }
+    if(text[length-2] == '*' )
+      last_lett = '';
+      //last_line;
+    else
+      last_lett = text.slice(index-1,index)
+      //+last_line;
   }
   
-  
-  
  // let last_lett = text.slice(index-1,index)+last_line;
- // console.log(last_lett)
-  let final_text = `${fist_lett}<span class="${"big_text"}">${last_lett}</span>`;
-
+ 
+  let final_text = `${fist_lett}<span id="${"big_text"}" class="${"fade-in"}">${last_lett}</span>${last_line}`;
+  
+  
+  setTimeout(function() {
+   let element = document.getElementById('big_text');
+   element.classList.add('show-text');
+  }, 40);
+  
+  
+  
   //nameContainer.style.opacity = "1";
   //nameContainer.setPropertiesValue
   //nameContainer.classList.add('opacity');
